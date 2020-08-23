@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib import colors
 
 def simulate(days,r,i,a1,a2,b1,b2,c1,c2,name):
-	N=10000
+	N=1000
 	I1=r*i*N
 	I2=(1-r)*i*N
 	S1=N*r -I1-I2
@@ -52,13 +52,13 @@ def simulate(days,r,i,a1,a2,b1,b2,c1,c2,name):
 		R.append(R1+R2)
 		I.append(I1+I2)
 
-	#plot(S,I,R,name)
-	plot2(S1l,S2l,I1l,I2l,R1l,R2l,name)
+	#plot(S,I,R,name,N)
+	plot2(S1l,S2l,I1l,I2l,R1l,R2l,name,N)
 
 
 
-def plot(S,I,R,name): 
-	plt.ylim(-500,10000)
+def plot(S,I,R,name,N): 
+	plt.ylim(-N/20,N)
 	plt.plot(S)
 	plt.plot(I)
 	plt.plot(R)
@@ -67,8 +67,8 @@ def plot(S,I,R,name):
 	plt.legend(['Susceptible','Infected','Recovered'],loc='upper right', shadow=True)
 	plt.show()
 
-def plot2(S1,S2,I1,I2,R1,R2,name): 
-	plt.ylim(-500,10000)
+def plot2(S1,S2,I1,I2,R1,R2,name,N): 
+	plt.ylim(-N/20,N)
 	plt.plot(S1)
 	plt.plot(I1)
 	plt.plot(R1)
